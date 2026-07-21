@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}
+Interview Analytics
+{% endblock %}
+
+{% block content %}
+
+<div class="analytics-container">
+
+    <h1>📊 Interview Analytics</h1>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h2>Total Questions</h2>
+            <h1>{{ total }}</h1>
+        </div>
+
+        <div class="analytics-card">
+            <h2>Answered</h2>
+            <h1>{{ answered }}</h1>
+        </div>
+
+        <div class="analytics-card">
+            <h2>Overall Score</h2>
+            <h1>{{ score }}%</h1>
+        </div>
+
+        <div class="analytics-card">
+            <h2>Status</h2>
+
+            {% if score >= 70 %}
+                <h1>✅ Pass</h1>
+            {% else %}
+                <h1>❌ Improve</h1>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h2>📈 Overall Score</h2>
+            <canvas id="scoreChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h2>🎯 Skill Analysis</h2>
+            <canvas id="skillChart"></canvas>
+        </div>
+
+    </div>
+
+    <div class="report-box">
+
+        <h2>🤖 AI Interview Report</h2>
+
+        <pre>{{ report }}</pre>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const score = Number("{{ score }}");
+
+new Chart(document.getElementById("scoreChart"), {
+
+    type: "doughnut",
+
+    data: {
+
+        labels: ["Score", "Remaining"],
+
+        datasets: [{
+
+            data: [score, 100 - score]
+
+        }]
+
+    }
+
+});
+
+new Chart(document.getElementById("skillChart"), {
+
+    type: "radar",
+
+    data: {
+
+        labels: [
+
+            "Technical",
+            "Communication",
+            "Confidence",
+            "Problem Solving",
+            "Overall"
+
+        ],
+
+        datasets: [{
+
+            label: "Performance",
+
+            data: [
+
+                score,
+                Math.max(score - 10, 0),
+                Math.min(score + 5, 100),
+                Math.max(score - 5, 0),
+                score
+
+            ]
+
+        }]
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

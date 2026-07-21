@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}
+Resume vs Job Description
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>AI Interview</h2>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+
+            <li><a href="/upload_resume">📄 Upload Resume</a></li>
+
+            <li><a href="/assistant">🤖 AI Resume Assistant</a></li>
+
+            <li><a href="/resume_analysis">📊 Resume Analysis</a></li>
+
+            <li><a href="/jd_match">💼 Resume vs JD</a></li>
+
+            <li><a href="/start_interview">🎤 Start Interview</a></li>
+
+            <li><a href="/history">📜 Interview History</a></li>
+
+            <li><a href="/profile">👤 Profile</a></li>
+
+            <li><a href="/logout">🚪 Logout</a></li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+        <h1>💼 Resume vs Job Description</h1>
+
+        <p>
+            Paste a Job Description below to see how well your uploaded resume matches it.
+        </p>
+
+        <br>
+
+        <form method="POST">
+
+            <textarea
+                name="job_description"
+                rows="16"
+                placeholder="Paste the complete Job Description here..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                Analyze Match
+            </button>
+
+        </form>
+
+        {% if report %}
+
+        <br><br>
+
+        <div class="card">
+
+            <h2>📊 Match Report</h2>
+
+            <pre class="analysis-report">
+
+{{ report }}
+
+            </pre>
+
+        </div>
+
+        {% endif %}
+
+    </main>
+
+</div>
+
+{% endblock %}

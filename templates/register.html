@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<div class="register-container">
+
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <h2>Create Account</h2>
+
+        {{ form.full_name(class="input-box", placeholder="Full Name") }}
+
+        {{ form.email(class="input-box", placeholder="Email") }}
+
+        {{ form.password(class="input-box", placeholder="Password") }}
+
+        {{ form.confirm_password(class="input-box", placeholder="Confirm Password") }}
+
+        {{ form.submit(class="btn") }}
+
+    </form>
+
+</div>
+
+{% endblock %}

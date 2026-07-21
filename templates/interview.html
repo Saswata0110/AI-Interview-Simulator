@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}AI Interview{% endblock %}
+
+{% block content %}
+
+<div class="interview-container">
+
+    <div class="interview-header">
+
+        <h1>🎤 AI Mock Interview</h1>
+
+        <div class="status-box">
+
+            <div>
+                <strong>Question</strong><br>
+                <span id="question-number">1 / 10</span>
+            </div>
+
+            <div>
+                <strong>Timer</strong><br>
+                <span id="timer">00:00</span>
+            </div>
+
+            <div>
+                <strong>Progress</strong><br>
+                <span id="progress-text">0%</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div id="progress-bar"></div>
+
+    </div>
+
+
+    <div class="interview-body">
+
+    <div class="left-panel">
+
+        <div class="question-card">
+
+            <h2>Question</h2>
+
+            <p id="question">
+
+                Click <strong>Start Interview</strong> to begin.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="right-panel">
+
+        <div class="camera-card">
+
+            <h2>🎥 Live Camera</h2>
+
+            <div class="camera-box">
+
+    <img
+        id="camera"
+        src="/video_feed"
+        alt="AI Proctor Camera"
+        width="420"
+        height="315"
+        style="
+            border-radius:12px;
+            border:3px solid #3b82f6;
+            object-fit:cover;
+            background:#111827;
+        "
+    >
+
+    <p
+        id="camera-text"
+        style="
+            margin-top:12px;
+            color:#22c55e;
+            font-weight:bold;
+            text-align:center;
+        "
+    >
+        🟢 AI Proctor Connected
+    </p>
+
+</div>
+
+            <div class="camera-status">
+
+    <span id="camera-text">
+        🟢 Camera Connected
+    </span>
+
+</div>
+
+<br>
+
+<div class="proctor-card">
+
+    <h3>🤖 AI Proctor</h3>
+
+    <div class="proctor-item">
+
+        <span>😀 Face Detection</span>
+
+        <span id="face-status">Waiting...</span>
+
+    </div>
+
+    <div class="proctor-item">
+
+        <span>👀 Eye Contact</span>
+
+        <span id="eye-status">Waiting...</span>
+
+    </div>
+
+    <div class="proctor-item">
+
+        <span>😊 Emotion</span>
+
+        <span id="emotion-status">Waiting...</span>
+
+    </div>
+
+    <div class="proctor-item">
+
+        <span>🎯 Confidence</span>
+
+        <span id="confidence-status">0%</span>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <div class="answer-card">
+
+        <h2>Your Answer</h2>
+
+       <textarea
+    id="answer"
+    rows="10"
+    placeholder="Type or speak your answer..."
+    ></textarea>
+
+<br><br>
+
+<button id="voice-btn" class="btn">
+    🎤 Start Speaking
+</button>
+
+    </div>
+
+
+    <div class="button-group">
+
+        <button id="start-btn" class="btn">
+            ▶ Start Interview
+        </button>
+
+        <button id="submit-btn" class="btn">
+            ✅ Submit Answer
+        </button>
+
+        <button id="next-btn" class="btn">
+            ➜ Next Question
+        </button>
+
+        <button id="finish-btn" class="btn danger">
+            Finish Interview
+        </button>
+
+    </div>
+
+
+    <div class="feedback-card">
+
+        <h2>🤖 AI Feedback</h2>
+
+        <div id="feedback">
+
+            Feedback will appear here.
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/interview.js') }}"></script>
+
+{% endblock %}

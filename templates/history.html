@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+Interview History
+{% endblock %}
+
+{% block content %}
+
+<div class="analytics-container">
+
+    <h1>📜 Interview History</h1>
+
+    {% if history %}
+
+    <table class="history-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Score</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for row in history %}
+
+            <tr>
+
+                <td>{{ row.id }}</td>
+
+                <td>{{ row.score }}%</td>
+
+                <td>{{ row.created_at }}</td>
+
+                <td>
+
+                    <a href="{{ url_for('interview.view_report', report_id=row.id) }}"
+                       class="btn-small">
+                        View
+                    </a>
+
+                    <a href="{{ url_for('interview.delete_report', report_id=row.id) }}"
+                       class="btn-danger"
+                       onclick="return confirm('Delete this report?')">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+    <div class="empty-box">
+        <h2>No Interview History Found</h2>
+        <p>Complete an interview to see your reports here.</p>
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

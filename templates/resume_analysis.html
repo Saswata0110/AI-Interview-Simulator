@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+Resume Analysis
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>AI Interview</h2>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+
+            <li><a href="/upload_resume">📄 Upload Resume</a></li>
+
+            <li><a href="/resume_analysis">📊 Resume Analysis</a></li>
+
+            <li><a href="/start_interview">🎤 Start Interview</a></li>
+
+            <li><a href="/history">📜 Interview History</a></li>
+
+            <li><a href="/profile">👤 Profile</a></li>
+
+            <li><a href="/logout">🚪 Logout</a></li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+        <h1>📄 AI Resume Analysis</h1>
+
+        <br>
+
+        <div class="card">
+
+            <pre class="analysis-report">
+
+{{ report }}
+
+            </pre>
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

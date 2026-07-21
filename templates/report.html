@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+Interview Report
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>AI Interview</h2>
+
+        <ul>
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/upload_resume">📄 Upload Resume</a></li>
+            <li><a href="/start_interview">🎤 Start Interview</a></li>
+            <li><a href="/history">📊 Interview History</a></li>
+            <li><a href="/profile">👤 Profile</a></li>
+            <li><a href="/logout">🚪 Logout</a></li>
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+        <h1>📄 Interview Report</h1>
+
+        <div class="card">
+
+            <h2>Overall Score</h2>
+
+            <h1 style="color:#3b82f6;">
+                {{ interview.overall_score }}
+            </h1>
+
+            <hr style="margin:25px 0;">
+
+            <pre style="white-space:pre-wrap;
+                        font-size:16px;
+                        color:#f1f5f9;
+                        line-height:30px;
+                        font-family:inherit;">
+
+{{ interview.report }}
+
+            </pre>
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Interview Report
+{% endblock %}
+
+{% block content %}
+
+<div class="analytics-container">
+
+    <h1>🤖 Interview Report</h1>
+
+    <div class="report-box">
+
+        <pre>{{ report }}</pre>
+
+    </div>
+
+    <br>
+
+    <a href="/history" class="btn">
+        ← Back to History
+    </a>
+
+</div>
+
+{% endblock %}

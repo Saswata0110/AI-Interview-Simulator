@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Resume Assistant
+{% endblock %}
+
+{% block content %}
+
+<div class="chat-container">
+
+    <h1>🤖 AI Resume Assistant</h1>
+
+    <div id="chat-box" class="chat-box">
+
+        <div class="ai-message">
+            Hello 👋<br><br>
+            Ask me anything about your uploaded resume.
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="message"
+            placeholder="Ask anything..."
+        >
+
+        <button id="sendBtn">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+{% endblock %}

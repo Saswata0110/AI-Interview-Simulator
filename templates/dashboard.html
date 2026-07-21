@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>AI Interview</h2>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+
+            <li><a href="/upload_resume">📄 Upload Resume</a></li>
+
+            <li><a href="/assistant">🤖 AI Resume Assistant</a></li>
+
+            <li><a href="/resume_analysis">📊 Resume Analysis</a></li>
+
+            <li><a href="/jd_match">💼 Resume vs JD</a></li>
+
+            <li><a href="/start_interview">🎤 Start Interview</a></li>
+
+            <li><a href="/history">📜 Interview History</a></li>
+
+            <li><a href="/profile">👤 Profile</a></li>
+
+            <li><a href="/logout">🚪 Logout</a></li>
+
+        </ul>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <h1>Welcome, {{ user_name }} 👋</h1>
+
+        <p>Ready for your next interview?</p>
+
+        <div class="cards">
+
+            <!-- Resume Upload -->
+            <div class="card">
+
+                <h2>📄 Resume</h2>
+
+                <p>Upload your latest resume.</p>
+
+                <br>
+
+                <a href="/upload_resume" class="btn">
+                    Open
+                </a>
+
+            </div>
+
+
+            <!-- AI Resume Assistant -->
+            <div class="card">
+
+                <h2>🤖 AI Resume Assistant</h2>
+
+                <p>Chat with your uploaded resume using Gemini AI.</p>
+
+                <br>
+
+                <a href="/assistant" class="btn">
+                    Open
+                </a>
+
+            </div>
+
+
+            <!-- Resume Analysis -->
+            <div class="card">
+
+                <h2>📊 Resume Analysis</h2>
+
+                <p>ATS Score, Missing Skills & AI Suggestions.</p>
+
+                <br>
+
+                <a href="/resume_analysis" class="btn">
+                    Analyze
+                </a>
+
+            </div>
+
+
+            <!-- Resume vs Job Description -->
+            <div class="card">
+
+                <h2>💼 Resume vs JD</h2>
+
+                <p>Compare your resume with a Job Description using AI.</p>
+
+                <br>
+
+                <a href="/jd_match" class="btn">
+                    Analyze
+                </a>
+
+            </div>
+
+
+            <!-- AI Interview -->
+            <div class="card">
+
+                <h2>🎤 AI Interview</h2>
+
+                <p>Practice with AI-generated interview questions.</p>
+
+                <br>
+
+                <a href="/start_interview" class="btn">
+                    Start
+                </a>
+
+            </div>
+
+
+            <!-- Interview Reports -->
+            <div class="card">
+
+                <h2>📊 Interview Reports</h2>
+
+                <p>View previous interviews and reports.</p>
+
+                <br>
+
+                <a href="/history" class="btn">
+                    View
+                </a>
+
+            </div>
+
+
+            <!-- AI Roadmap -->
+            <div class="card">
+
+                <h2>🧠 AI Roadmap</h2>
+
+                <p>Personalized learning roadmap based on interviews.</p>
+
+                <br>
+
+                <a href="#" class="btn">
+                    Coming Soon
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

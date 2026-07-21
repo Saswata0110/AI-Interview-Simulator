@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+
+            👤
+
+        </div>
+
+        <h1>My Profile</h1>
+
+        <form method="POST">
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    name="full_name"
+                    value="{{ user.full_name }}"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    value="{{ user.email }}"
+                    required
+                >
+
+            </div>
+
+            <button
+                class="btn"
+                type="submit"
+            >
+                💾 Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="profile-stats">
+
+        <div class="stat-card">
+
+            <h2>🎤 Interviews</h2>
+
+            <h1>{{ total_interviews }}</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>⭐ Best Score</h2>
+
+            <h1>{{ best_score }}%</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>📊 Average</h2>
+
+            <h1>{{ average_score }}%</h1>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

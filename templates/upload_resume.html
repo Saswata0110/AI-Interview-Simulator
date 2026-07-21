@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Upload Resume
+{% endblock %}
+
+{% block content %}
+
+<div class="upload-container">
+
+    <div class="upload-card">
+
+        <h1>📄 Upload Resume</h1>
+
+        <p>
+            Upload your latest resume in PDF format.
+            Our AI will analyze it and generate interview questions.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="resume"
+                accept=".pdf"
+                required
+            >
+
+            <br><br>
+
+            <button class="btn" type="submit">
+                Upload Resume
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="{{ url_for('dashboard.dashboard_home') }}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
