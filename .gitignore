@@ -5,6 +5,7 @@ __pycache__/
 uploads/
 reports/
 vector_db/
+faiss_index/
 instance/
-.idea/
 .vscode/
+.idea/
