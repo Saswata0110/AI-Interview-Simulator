@@ -2,18 +2,16 @@ from sentence_transformers import SentenceTransformer
 
 
 class ResumeEmbedding:
-    """
-    Handles text chunking and embedding generation.
-    """
 
     def __init__(self):
-        # Lightweight and accurate embedding model
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.model = None
+
+    def get_model(self):
+        if self.model is None:
+            self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        return self.model
 
     def split_text(self, text, chunk_size=500):
-        """
-        Split long resume text into chunks.
-        """
 
         words = text.split()
 
@@ -26,11 +24,10 @@ class ResumeEmbedding:
         return chunks
 
     def create_embeddings(self, chunks):
-        """
-        Convert text chunks into embeddings.
-        """
 
-        embeddings = self.model.encode(
+        model = self.get_model()
+
+        embeddings = model.encode(
             chunks,
             convert_to_numpy=True,
             normalize_embeddings=True

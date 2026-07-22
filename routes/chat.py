@@ -4,7 +4,7 @@ from rag.qa import InterviewQA
 
 chat = Blueprint("chat", __name__)
 
-qa = InterviewQA()
+# qa = InterviewQA()
 
 
 @chat.route("/assistant")
@@ -40,7 +40,7 @@ def chat_with_ai():
         )
 
     try:
-
+        qa = InterviewQA()
         answer = qa.ask(question)
 
         return jsonify(
