@@ -252,7 +252,6 @@ http://127.0.0.1:5000
 ```
 
 ---
-
 # 📸 Screenshots
 
 ## 🏠 Home Page
@@ -394,7 +393,6 @@ This project helped me gain practical experience in:
 - Software Engineering Best Practices
 
 ---
-
 # 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome.
@@ -498,7 +496,7 @@ If you have any questions, suggestions, or collaboration opportunities, feel fre
 
 **GitHub:** https://github.com/Saswata0110
 
-**LinkedIn:** www.linkedin.com/in/saswata-dhar-9b8192327
+**LinkedIn:** https://www.linkedin.com/in/saswata-dhar-9b8192327
 
 ---
 
