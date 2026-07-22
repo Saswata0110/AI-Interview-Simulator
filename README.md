@@ -1,56 +1,91 @@
 # 🤖 AI Interview Simulator
 
-An AI-powered Interview Simulator built using **Flask**, **MySQL**, **Google Gemini API**, **FAISS**, and **Sentence Transformers**. This application helps users prepare for technical interviews by generating resume-based interview questions, analyzing resumes, matching resumes with job descriptions, and providing AI-powered interview feedback using Retrieval-Augmented Generation (RAG).
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Flask](https://img.shields.io/badge/Flask-3.x-black)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-orange)
+![FAISS](https://img.shields.io/badge/FAISS-Vector%20Database-green)
+![RAG](https://img.shields.io/badge/RAG-Retrieval%20Augmented%20Generation-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+An AI-powered Interview Simulator built using **Flask**, **MySQL**, **Google Gemini API**, **FAISS**, and **Sentence Transformers**.
+
+This application helps users prepare for technical interviews by generating resume-based interview questions, analyzing resumes, matching resumes with job descriptions, and providing AI-powered interview feedback using **Retrieval-Augmented Generation (RAG)**.
 
 ---
 
 # ✨ Features
 
 ## 🔐 Authentication
+
 - User Registration
 - Secure Login
 - Logout
 - Session Management
 
+---
+
 ## 📄 Resume Upload
-- Upload Resume in PDF Format
-- Extract Resume Text
-- Store Resume Information
+
+- Upload Resume (PDF)
+- Resume Parsing
+- Resume Storage
+- Resume History
+
+---
 
 ## 🤖 AI Assistant
+
 - Resume-aware AI Chatbot
 - Context-based Question Answering
 - Powered by Google Gemini API
 
+---
+
 ## 🧠 Resume-based RAG
+
 - Resume Chunking
 - Sentence Transformer Embeddings
-- FAISS Vector Search
-- Semantic Resume Retrieval
+- FAISS Vector Database
+- Semantic Search
+- Context Retrieval
+
+---
 
 ## 🎤 AI Interview Simulator
-- Resume-based Interview Questions
+
+- Resume-based Questions
 - Technical Questions
-- Project Questions
 - Behavioral Questions
+- Project Questions
 - AI Evaluation
+- Interview Feedback
 - Final Interview Report
 
+---
+
 ## 📊 Resume Analysis
+
 - Resume Strengths
 - Resume Weaknesses
 - Skill Gap Analysis
 - Improvement Suggestions
 
+---
+
 ## 📑 Job Description Matching
+
 - ATS-style Resume Matching
 - Match Percentage
 - Missing Skills
 - Resume Improvement Suggestions
-- Interview Questions Based on JD
+- Interview Questions based on JD
+
+---
 
 ## 👤 User Dashboard
-- Profile Management
+
+- User Profile
 - Resume History
 - Interview History
 
@@ -59,18 +94,22 @@ An AI-powered Interview Simulator built using **Flask**, **MySQL**, **Google Gem
 # 🛠️ Tech Stack
 
 ## Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 
 ## Backend
+
 - Python
 - Flask
 
 ## Database
+
 - MySQL
 
 ## Artificial Intelligence
+
 - Google Gemini API
 - Retrieval-Augmented Generation (RAG)
 - FAISS Vector Database
@@ -78,6 +117,7 @@ An AI-powered Interview Simulator built using **Flask**, **MySQL**, **Google Gem
 - all-MiniLM-L6-v2
 
 ## Python Libraries
+
 - Flask
 - Flask-MySQLdb
 - PyMuPDF
@@ -91,7 +131,7 @@ An AI-powered Interview Simulator built using **Flask**, **MySQL**, **Google Gem
 
 # 📂 Project Structure
 
-```
+```text
 AI-Interview-Simulator
 │
 ├── database/
@@ -130,13 +170,13 @@ AI-Interview-Simulator
 
 1. User creates an account.
 2. User logs into the system.
-3. Resume is uploaded in PDF format.
+3. User uploads a resume.
 4. Resume text is extracted.
-5. Resume is divided into smaller chunks.
+5. Resume is divided into chunks.
 6. Sentence Transformers generate embeddings.
 7. Embeddings are stored in a FAISS Vector Database.
 8. User interacts with the AI Assistant.
-9. Relevant resume information is retrieved using RAG.
+9. RAG retrieves relevant resume information.
 10. Google Gemini generates intelligent responses.
 11. AI Interview Simulator generates interview questions.
 12. Candidate answers are evaluated.
@@ -152,7 +192,7 @@ AI-Interview-Simulator
 git clone https://github.com/Saswata0110/AI-Interview-Simulator.git
 ```
 
-## Move into Project Folder
+## Enter Project Folder
 
 ```bash
 cd AI-Interview-Simulator
@@ -186,23 +226,20 @@ pip install -r requirements.txt
 
 ## Configure Project
 
-Update the following values inside `config.py`.
+Update the following values inside `config.py`
 
 ```python
-GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
+SECRET_KEY = "your_secret_key"
 
 MYSQL_HOST = "localhost"
-
 MYSQL_USER = "root"
-
 MYSQL_PASSWORD = "your_password"
-
 MYSQL_DB = "database_name"
 
-SECRET_KEY = "your_secret_key"
+GEMINI_API_KEY = "your_gemini_api_key"
 ```
 
-## Run the Application
+## Run Application
 
 ```bash
 python app.py
@@ -220,69 +257,116 @@ http://127.0.0.1:5000
 
 ## 🏠 Home Page
 
-_Add Screenshot_
+![Home](screenshots/home.png)
 
 ---
 
-## 🔑 Login Page
+## 🔐 Login Page
 
-_Add Screenshot_
+![Login](screenshots/login.png)
 
 ---
 
-## 📊 Dashboard
+## 📝 Register Page
 
-_Add Screenshot_
+![Register](screenshots/register.png)
+
+---
+
+## 📊 User Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 👤 User Profile
+
+![Profile](screenshots/profile.png)
 
 ---
 
 ## 📄 Resume Upload
 
-_Add Screenshot_
+![Resume Upload](screenshots/upload_resume.png)
 
 ---
 
 ## 🤖 AI Assistant
 
-_Add Screenshot_
+Ask questions about the uploaded resume using Retrieval-Augmented Generation (RAG).
+
+![AI Assistant](screenshots/ai_assistant.png)
 
 ---
 
 ## 🎤 AI Interview
 
-_Add Screenshot_
+Resume-based AI interview questions generated using Google Gemini.
+
+![Interview](screenshots/interview.png)
+
+---
+
+## 🎤 AI Interview (Continued)
+
+Interactive interview session with AI-generated questions.
+
+![Interview 2](screenshots/interview2.png)
 
 ---
 
 ## 📑 Resume Analysis
 
-_Add Screenshot_
+AI analyzes the uploaded resume and provides strengths, weaknesses, and improvement suggestions.
+
+![Resume Analysis](screenshots/resume_analysis.png)
 
 ---
 
-## 📈 JD Match
+## 📈 Job Description Match
 
-_Add Screenshot_
+Compare the uploaded resume against a Job Description using ATS-style analysis.
+
+![JD Match](screenshots/jd_match.png)
 
 ---
 
-## 📝 Final Interview Report
+## 📝 AI Interview Report
 
-_Add Screenshot_
+Comprehensive AI-generated interview evaluation report.
+
+![Interview Report](screenshots/report.png)
+
+---
+
+## 📊 Detailed Report
+
+Question-wise evaluation with strengths, weaknesses, and recommendations.
+
+![Detailed Report](screenshots/report2.png)
+
+---
+
+## 📚 Interview History
+
+View previously completed interviews and reports.
+
+![Interview History](screenshots/history.png)
 
 ---
 
 # 🔮 Future Improvements
 
-- Voice-based AI Interview
-- Coding Interview Module
-- Multi-language Support
-- Resume Builder
-- AI Career Guidance
-- Cloud Deployment
-- Real-time Interview Analytics
-- Interview Progress Tracking
-- AI Mock Interview with Voice
+- 🎙️ Voice-based AI Interview
+- 💻 Coding Interview Module
+- 🌍 Multi-language Support
+- 📄 Resume Builder
+- 🤖 AI Career Guidance
+- ☁️ Cloud Deployment
+- 📊 Real-time Interview Analytics
+- 📈 Interview Progress Tracking
+- 🎯 Personalized Interview Preparation
+- 📱 Mobile Responsive Design
 
 ---
 
@@ -291,40 +375,137 @@ _Add Screenshot_
 This project helped me gain practical experience in:
 
 - Flask Web Development
+- Full Stack Development
 - REST API Development
 - User Authentication
 - Session Management
 - MySQL Database Integration
+- Resume Parsing
 - Retrieval-Augmented Generation (RAG)
-- FAISS Vector Database
+- Vector Databases (FAISS)
 - Sentence Transformers
+- Semantic Search
 - Google Gemini API
 - Prompt Engineering
 - Artificial Intelligence Integration
-- Full Stack Development
+- PDF Processing
+- Project Architecture
+- Git & GitHub
+- Software Engineering Best Practices
+
+---
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+If you'd like to contribute:
+
+1. Fork this repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Open a Pull Request.
 
 ---
 
 # 💻 Author
 
-**Saswata Dhar**
+## Saswata Dhar
 
-B.Tech in Computer Science & Engineering
+**B.Tech in Computer Science & Engineering**
 
-GitHub:
+### 🌐 GitHub
+
 https://github.com/Saswata0110
 
-LinkedIn:
-https://www.linkedin.com/
+### 💼 LinkedIn
+
+https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME
+
+> Replace the LinkedIn URL above with your actual LinkedIn profile.
 
 ---
 
-# 📜 License
+# 🙏 Acknowledgements
 
-This project is licensed under the MIT License.
+Special thanks to the amazing open-source community and the following technologies:
+
+- Flask
+- MySQL
+- Google Gemini API
+- FAISS
+- Sentence Transformers
+- Hugging Face
+- ReportLab
+- PyMuPDF
 
 ---
 
-# ⭐ Show Your Support
+# 📄 License
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+This project is licensed under the **MIT License**.
+
+Feel free to use, modify, and distribute this project under the terms of the MIT License.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider:
+
+⭐ Starring this repository
+
+🍴 Forking the project
+
+💬 Sharing your feedback
+
+📢 Connecting with me on LinkedIn
+
+Your support motivates me to build more AI-powered projects.
+
+---
+
+# 🚀 Project Status
+
+✅ Authentication System
+
+✅ Resume Upload
+
+✅ Resume Parsing
+
+✅ Resume-based RAG
+
+✅ FAISS Vector Search
+
+✅ AI Assistant
+
+✅ Resume Analysis
+
+✅ Job Description Matching
+
+✅ AI Interview Simulator
+
+✅ AI Interview Evaluation
+
+✅ Professional Interview Report
+
+---
+
+# 📬 Contact
+
+If you have any questions, suggestions, or collaboration opportunities, feel free to connect with me.
+
+**GitHub:** https://github.com/Saswata0110
+
+**LinkedIn:** www.linkedin.com/in/saswata-dhar-9b8192327
+
+---
+
+<div align="center">
+
+## ⭐ If you like this project, don't forget to give it a Star! ⭐
+
+Made with ❤️ by **Saswata Dhar**
+
+</div>
