@@ -4,9 +4,16 @@ from rag.qa import InterviewQA
 class JDMatchService:
 
     def __init__(self):
-        self.qa = InterviewQA()
+        self.qa = None
+
+    def get_qa(self):
+        if self.qa is None:
+            self.qa = InterviewQA()
+        return self.qa
 
     def analyze(self, job_description):
+
+        qa = self.get_qa()
 
         prompt = f"""
 You are an expert ATS (Applicant Tracking System) evaluator.
@@ -44,4 +51,4 @@ Base everything only on the uploaded resume and the provided Job Description.
 Keep the report under 600 words.
 """
 
-        return self.qa.chat(prompt)
+        return qa.chat(prompt)

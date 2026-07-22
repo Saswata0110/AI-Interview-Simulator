@@ -4,13 +4,19 @@ from rag.qa import InterviewQA
 class InterviewService:
 
     def __init__(self):
+        self.qa = None
 
-        self.qa = InterviewQA()
+    def get_qa(self):
+        if self.qa is None:
+            self.qa = InterviewQA()
+        return self.qa
 
     # ------------------------------------
     # Generate Interview Questions
     # ------------------------------------
     def generate_questions(self):
+
+        qa = self.get_qa()
 
         prompt = """
 You are a Senior Software Engineer interviewer.
@@ -27,7 +33,7 @@ Rules:
 - Return only questions.
 """
 
-        result = self.qa.ask(prompt)
+        result = qa.ask(prompt)
 
         questions = []
 
@@ -44,6 +50,8 @@ Rules:
     # Final Interview Report
     # ------------------------------------
     def final_report(self, questions, answers):
+
+        qa = self.get_qa()
 
         interview = ""
 
@@ -127,4 +135,4 @@ Important Rules:
 - Keep the report under 700 words.
 """
 
-        return self.qa.chat(prompt)
+        return qa.chat(prompt)
