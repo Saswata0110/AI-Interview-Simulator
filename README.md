@@ -419,7 +419,7 @@ https://github.com/Saswata0110
 
 ### 💼 LinkedIn
 
-https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME
+https://www.linkedin.com/in/saswata-dhar-9b8192327
 
 > Replace the LinkedIn URL above with your actual LinkedIn profile.
 
